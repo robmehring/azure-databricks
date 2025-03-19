@@ -8,6 +8,12 @@ variable "location" {
   type        = string
 }
 
+variable "managed_resource_group_name" {
+  description = "(Optional) The name of the resource group where Azure should place the managed Databricks resources. Defaults to databricks-rg-<resource group name>. Changing this forces a new resource to be created."
+  default = null
+  type = string
+}
+
 variable "public_network_access_enabled" {
   description = "(Optional) Allow public access for accessing workspace. Set value to false to access workspace only via private link endpoint. Possible values include true or false. Defaults to true."
   default     = true
