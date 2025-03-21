@@ -5,9 +5,10 @@ resource "azurerm_resource_group" "resource_group" {
 }
 
 resource "azurerm_databricks_workspace" "databricks_workspace" {
-  location            = azurerm_resource_group.resource_group.location
-  name                = var.databricks_workspace_name
-  resource_group_name = azurerm_resource_group.resource_group.name
-  sku                 = var.sku
-  tags                = var.tags
+  location                    = azurerm_resource_group.resource_group.location
+  managed_resource_group_name = var.managed_resource_group_name
+  name                        = var.databricks_workspace_name
+  resource_group_name         = azurerm_resource_group.resource_group.name
+  sku                         = var.sku
+  tags                        = var.tags
 }
